@@ -25,7 +25,6 @@ export function Contact() {
     return (
         <>
             <LogoLoop
-                className="mt-30 -mb-40"
                 logos={contactLogos}
                 speed={200}
                 direction="left"
