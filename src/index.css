@@ -122,14 +122,65 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    box-sizing: border-box;
   }
 
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
 
   html {
     @apply font-sans;
     @apply antialiased;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
   }
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Lenis smooth scrolling baseline */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* Vertical scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #52525b #09090b;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 0;
+}
+
+*::-webkit-scrollbar:horizontal {
+  display: none;
+}
+
+*::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #71717a 0%, #3f3f46 100%);
+  border-radius: 999px;
+  border: 2px solid #09090b;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a1a1aa 0%, #52525b 100%);
 }
