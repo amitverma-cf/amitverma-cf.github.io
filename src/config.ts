@@ -55,71 +55,47 @@ const experienceData = [
 
 const projectItems = [
     {
-        image: 'https://picsum.photos/seed/1/800/600?grayscale',
-        link: 'https://github.com/amitverma-cf/movie-rag',
-        title: 'Movie-RAG',
-        description: 'IMDB Movie RAG and Tool Calling system.'
-    },
-    {
-        image: 'https://picsum.photos/seed/1/800/600?grayscale',
+        image: 'https://v1.docs.ohif.org/assets/images/LT_Viewer-b595e35939c5930f68de2f364a0dc3a5.png',
         link: 'https://github.com/amitverma-cf/pacs',
         title: 'PACS 3D',
         description: 'Clinical grade medical imaging renderer.'
     },
     {
-        image: 'https://picsum.photos/seed/1/800/600?grayscale',
+        image: 'https://static.vecteezy.com/system/resources/previews/011/411/224/non_2x/illustration-of-japanese-radish-vector.jpg',
         link: 'https://github.com/amitverma-cf/reddish',
         title: 'Reddish',
         description: 'Concurrent multithreaded Redis-like server.'
     },
     {
-        image: 'https://picsum.photos/seed/1/800/600?grayscale',
+        image: 'https://raw.githubusercontent.com/amitverma-cf/movie-rag/master/assets/dashboard.png',
+        link: 'https://github.com/amitverma-cf/movie-rag',
+        title: 'Movie-RAG',
+        description: 'IMDB Movie RAG and Tool Calling system.'
+    },
+    {
+        image: 'https://cdn.dribbble.com/userupload/41901234/file/original-1f9e9c178cdc35b4c08db5e81643cdf3.jpg',
         link: 'https://github.com/amitverma-cf/unihub',
         title: 'UniHub',
         description: 'University student community platform.'
     },
     {
-        image: 'https://picsum.photos/seed/1/800/600?grayscale',
+        image: 'https://cdn.dribbble.com/userupload/21339812/file/original-ec108147434c73676cf0dbfb076d50e7.png',
         link: 'https://github.com/amitverma-cf/acm_mu',
         title: 'ACM MU',
         description: 'Official ACM MU chapter landing page.'
     },
     {
-        image: 'https://picsum.photos/seed/1/800/600?grayscale',
+        image: 'https://cdn.dribbble.com/userupload/4089514/file/original-f27856c707b2026d65b0d211ef8640e4.png',
         link: 'https://github.com/amitverma-cf/BudgetTracker',
-        title: 'Budget Tracker',
+        title: 'Budgeter',
         description: 'Personal finance and expenditure manager.'
     },
     {
-        image: 'https://picsum.photos/seed/1/800/600?grayscale',
+        image: 'https://cdn.dribbble.com/userupload/40425258/file/original-4eb8fd76808ba0c90afbbb5b7eb2ae31.png',
         link: 'https://github.com/amitverma-cf/flutter_instagram_redesign',
-        title: 'Re-Instagram',
+        title: 'ReInsta',
         description: 'Flutter-based social media UI redesign.'
     }
 ];
 
-const contactItems = [
-    {
-        image: `https://picsum.photos/seed/1/800/600?grayscale`,
-        text: 'LinkedIn'
-    },
-    {
-        image: `https://picsum.photos/seed/2/800/600?grayscale`,
-        text: 'GitHub'
-    },
-    
-    {
-        image: `https://picsum.photos/seed/2/800/600?grayscale`,
-        text: 'Hugging Face'
-    },
-    {
-        image: `https://picsum.photos/seed/3/800/600?grayscale`,
-        text: 'Gmail'
-    },
-    {
-        image: `https://picsum.photos/seed/4/800/600?grayscale`,
-        text: 'Twitter'
-    },
-];
-
-export { projects, experienceData, projectItems, contactItems };
+export { projects, experienceData, projectItems };

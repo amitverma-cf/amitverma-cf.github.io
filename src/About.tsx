@@ -1,48 +1,18 @@
 import React from 'react';
 import { experienceData } from '@/config';
-import TargetCursor from '@/components/TargetCursor';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { AiNetworkIcon, DroneIcon, MoneyBag02Icon, Tractor } from '@hugeicons/core-free-icons';
 
-// --- Huge Geometric Icons ---
-const IconAI = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-40 h-40 text-zinc-100">
-        <path strokeLinecap="square" d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
-        <path strokeLinecap="square" d="M12 6v2M12 16v2M6 12h2M16 12h2M8.46 8.46l1.42 1.42M14.12 14.12l1.42 1.42M8.46 15.54l1.42-1.42M14.12 9.88l1.42-1.42" />
-        <circle cx="12" cy="12" r="2" fill="currentColor" />
-    </svg>
-);
-
-const IconFintech = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-40 h-40 text-zinc-100">
-        <path strokeLinecap="square" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <circle cx="12" cy="12" r="3" strokeLinecap="square" />
-    </svg>
-);
-
-const IconDrones = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-40 h-40 text-zinc-100">
-        <circle cx="12" cy="12" r="10" strokeLinecap="square" />
-        <path strokeLinecap="square" d="M12 2v4M12 18v4M2 12h4M18 12h4M8 8l8 8M16 8l-8 8" />
-    </svg>
-);
-
-const IconAgritech = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-40 h-40 text-zinc-100">
-        <path strokeLinecap="square" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-    </svg>
-);
-
-// --- Icon Mapping Helper ---
 const getIcon = (company: string) => {
     switch (company.toLowerCase()) {
-        case 'yudi ai': return <IconAI />;
-        case 'facepe.net': return <IconFintech />;
-        case 'prithvi quest': return <IconDrones />;
-        case 'daybest': return <IconAgritech />;
-        default: return <IconAgritech />;
+        case 'yudi ai': return <HugeiconsIcon size={120} icon={AiNetworkIcon} />;
+        case 'facepe.net': return <HugeiconsIcon size={120} icon={MoneyBag02Icon} />;
+        case 'prithvi quest': return <HugeiconsIcon size={120} icon={DroneIcon} />;
+        case 'daybest': return <HugeiconsIcon size={120} icon={Tractor} />;
+        default: return <HugeiconsIcon size={120} icon={DroneIcon} />;
     }
 };
 
-// --- Interfaces ---
 export interface ExperienceData {
     period: string;
     role: string;
@@ -55,7 +25,6 @@ interface ExperienceNodeProps extends ExperienceData {
     icon: React.ReactNode;
 }
 
-// --- Card Component ---
 export const ExperienceNode: React.FC<ExperienceNodeProps> = ({
     period,
     role,
@@ -92,28 +61,12 @@ export const ExperienceNode: React.FC<ExperienceNodeProps> = ({
     </div>
 );
 
-// --- Main Component ---
+
 export default function ExperienceTimeline() {
     return (
         <section className="h-screen w-full bg-zinc-950 relative overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex items-center scrollbar-hide">
             <div className="fixed top-1/2 left-0 w-[500vw] h-0 border-t-4 border-dotted border-zinc-900 -translate-y-1/2 -z-10" />
             <div className="flex flex-row items-center h-full px-[10vw] gap-24 w-max">
-                <TargetCursor
-                    spinDuration={2}
-                    hideDefaultCursor
-                    parallaxOn
-                    hoverDuration={0.2}
-                />
-
-                {/* Intro Card */}
-                <div className="cursor-target snap-center shrink-0 w-[60vw] max-w-2xl flex flex-col items-start gap-8">
-                    <div className="w-32 h-32 border-4 border-dotted border-zinc-800 rounded-full flex items-center justify-center bg-zinc-900">
-                        <div className="w-8 h-8 bg-zinc-100 rounded-full" />
-                    </div>
-                    <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-zinc-50 mb-4">Experience.</h1>
-                </div>
-
-                {/* Mapped Experience Cards */}
                 {experienceData.map((exp, idx) => (
                     <ExperienceNode
                         key={idx}

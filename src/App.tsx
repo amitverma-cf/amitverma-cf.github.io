@@ -32,7 +32,7 @@ export default function App() {
       <div className="h-screen w-screen overflow-hidden">
         <InfiniteMenu items={projectItems} scale={1} />
       </div>
-      <div className="h-screen w-screen overflow-hidden"><Contact /></div>
+      <div className="overflow-hidden py-24"><Contact /></div>
       <div className="h-100 w-screen overflow-hidden">
         <ParticleTypography
           text="AMIT VERMA"
