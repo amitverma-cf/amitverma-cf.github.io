@@ -1134,7 +1134,8 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0 }) => {
           font-black
           [font-size:4rem]
           left-[1.6em]
-          top-1/2
+          md:top-1/2
+          top-1/4
           transform
           translate-x-[20%]
           -translate-y-1/2
@@ -1156,7 +1157,8 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0 }) => {
           absolute
           max-w-[10ch]
           text-[1.5rem]
-          top-1/2
+          md:top-1/2
+          bottom-1/9
           right-[1%]
           transition-all
           ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
@@ -1174,7 +1176,8 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0 }) => {
             onClick={handleButtonClick}
             className={`
           absolute
-          left-1/2
+          md:left-1/2
+          right-1/12
           z-10
           w-[60px]
           h-[60px]
@@ -1190,7 +1193,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0 }) => {
           ${
             isMoving
               ? 'bottom-[-80px] opacity-0 pointer-events-none duration-[100ms] scale-0 -translate-x-1/2'
-              : 'bottom-[3.8em] opacity-100 pointer-events-auto duration-[500ms] scale-100 -translate-x-1/2'
+              : 'md:bottom-[5.8em] bottom-1/6 opacity-100 pointer-events-auto duration-[500ms] scale-100 -translate-x-1/2'
           }
         `}
           >
