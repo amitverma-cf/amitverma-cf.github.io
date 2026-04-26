@@ -137,6 +137,7 @@ export default function ExperienceTimeline() {
                     }
                 );
             });
+            ScrollTrigger.refresh();
         },
         { scope: sectionRef, dependencies: [experienceData.length] }
     );

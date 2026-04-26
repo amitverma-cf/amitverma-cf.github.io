@@ -16,21 +16,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
-  const isSectionScrollLocked = useRef(false);
   const lenisRef = useRef<Lenis | null>(null);
-
-  const sectionOrder = useMemo(
-    () => ["home", "experiences", "about", "projects-title", "projects", "contacts-title", "contact", "signature"],
-    []
-  );
 
   const sectionEase = useCallback((t: number) => {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   }, []);
 
   useGSAP(() => {
+    // 1. Initialize Lenis for smooth momentum scrolling
     const lenis = new Lenis({
-      duration: 0.62,
+      duration: 0.8, // Slightly longer for a more cinematic feel
       smoothWheel: true,
       syncTouch: false,
       touchMultiplier: 1.5,
@@ -39,7 +34,6 @@ export default function App() {
     });
 
     lenisRef.current = lenis;
-
     lenis.on('scroll', ScrollTrigger.update);
 
     const raf = (time: number) => {
@@ -49,57 +43,46 @@ export default function App() {
     gsap.ticker.add(raf);
     gsap.ticker.lagSmoothing(0);
 
-    // Dynamic array to track our snap triggers
-    const snapTriggers: ScrollTrigger[] = [];
+    // 2. Scrollytelling: The "Pin and Fade" effect for the Projects section
+    const projectTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#projects",
+        start: "center center", // Pin when the section hits the exact center of the screen
+        end: "+=300%", // Scroll runway: Hold the pin for 1.5x the viewport height
+        pin: true,
+        scrub: 1, // 1-second momentum smoothing on the fade
+        anticipatePin: 1,
+      }
+    });
 
-    // Delay initialization to ensure DOM layout and About section's Pinot spacer exist
-    const timeoutId = setTimeout(() => {
-      const getSections = () => sectionOrder.map((id) => document.getElementById(id)).filter((el): el is HTMLElement => el !== null);
-      const sections = getSections();
-      
-      sections.forEach((sec) => {
-        // Skip 'about' since it comes with horizontal snap points securely wrapped inside About.tsx
-        if (sec.id === "about") return;
+    // Animate the inner wrapper of the projects section
+    projectTl.fromTo("#projects .content-wrapper", 
+      { opacity: 0, scale: 0.95 }, 
+      { opacity: 1, scale: 1, duration: 0.5 } // Fade In
+    )
+    .to("#projects .content-wrapper", { opacity: 1, duration: 5 }) // Hold state (user explores the InfiniteMenu)
+    .to("#projects .content-wrapper", { opacity: 0, scale: 1.05, duration: 0.5 }); // Fade Out
 
-        const st = ScrollTrigger.create({
-          trigger: sec,
-          start: "top top",
-          end: "+=100%", // Valid boundary covering exact height of section
-          snap: {
-            snapTo: [0, 1], // Pull progress towards closest boundary
-            duration: { min: 0.25, max: 0.6 },
-            delay: 0.05, // Rapid reaction once dragging force relents
-            ease: sectionEase
-          }
-        });
-        snapTriggers.push(st);
-      });
-    }, 150);
+    // 3. Force layout recalculation after all pins are mapped
+    ScrollTrigger.refresh();
 
     return () => {
-      clearTimeout(timeoutId);
-      snapTriggers.forEach(st => st.kill());
       gsap.ticker.remove(raf);
       lenis.destroy();
       lenisRef.current = null;
     };
-  }, [sectionEase, sectionOrder]);
+  }, []); // Removed complex dependencies since we aren't tracking dynamic snap arrays anymore
 
+  // 4. Simplified Navigation: Just tell Lenis where to go
   const scrollToSection = useCallback((id: string) => {
     if (lenisRef.current) {
-      isSectionScrollLocked.current = true;
       lenisRef.current.scrollTo(`#${id}`, {
-        duration: 0.5,
+        duration: 1,
         offset: 0,
-        lock: true,
         easing: sectionEase,
-        onComplete: () => {
-          isSectionScrollLocked.current = false;
-        },
       });
       return;
     }
-
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [sectionEase]);
 
@@ -129,45 +112,36 @@ export default function App() {
           magnification={70}
         />
       </div>
+      
       <section id="home" className="h-screen w-screen overflow-hidden"><Hero /></section>
+      
       <section id="experiences" className="h-screen w-screen overflow-hidden">
-        <ParticleTypography
-          text="Experiences"
-          fontSize={200}
-          particleDensity={5}
-          dispersionStrength={20}
-        />
+        <ParticleTypography text="Experiences" fontSize={200} particleDensity={5} dispersionStrength={20} />
       </section>
-      <section id="about" className="w-screen overflow-hidden"><AboutTimeline /></section>
+      
+      {/* Horizontal pinned timeline */}
+      <AboutTimeline />
+      
       <section id="projects-title" className="h-screen w-screen overflow-hidden">
-        <ParticleTypography
-          text="Projects"
-          fontSize={200}
-          particleDensity={5}
-          dispersionStrength={20}
-        />
+        <ParticleTypography text="Projects" fontSize={200} particleDensity={5} dispersionStrength={20} />
       </section>
-      <section id="projects" className="h-screen w-screen overflow-hidden">
-        <InfiniteMenu items={projectItems} scale={1} />
+      
+      {/* Scrollytelling Projects Section */}
+      <section id="projects" className="h-screen w-screen overflow-hidden flex items-center justify-center bg-black">
+        {/* The content-wrapper is crucial here. We animate THIS, not the section itself, to prevent layout breaks when pinned */}
+        <div className="content-wrapper w-full h-full flex items-center justify-center will-change-transform">
+          <InfiniteMenu items={projectItems} scale={1} />
+        </div>
       </section>
+      
       <section id="contacts-title" className="h-screen w-screen overflow-hidden">
-        <ParticleTypography
-          text="Contacts"
-          fontSize={200}
-          particleDensity={5}
-          dispersionStrength={20}
-        />
+        <ParticleTypography text="Contacts" fontSize={200} particleDensity={5} dispersionStrength={20} />
       </section>
+      
       <section id="contact" className="h-screen w-screen overflow-hidden items-center pt-30">
         <Contact />
-        <ParticleTypography
-          text="AMIT VERMA"
-          fontSize={400}
-          particleDensity={5}
-          dispersionStrength={20}
-        />
+        <ParticleTypography text="AMIT VERMA" fontSize={400} particleDensity={5} dispersionStrength={20} />
       </section>
     </div>
   );
 }
-
