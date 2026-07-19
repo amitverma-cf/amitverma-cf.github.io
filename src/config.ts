@@ -1,21 +1,21 @@
 const projects = [
     {
         title: "Reddish",
-        description: "Cross-platform in-memory data store supporting RESP parsing.",
+        description: "Multi-client TCP server implementing a Redis-like store with RESP parsing.",
         github: "https://github.com/amitverma-cf/reddish",
         date: "2026",
         badges: ["C++", "CMake", "TCP"]
     },
     {
         title: "SC Digital Contagion",
-        description: "30-day temporal stress model using social graph homophily.",
+        description: "30-day agent-based stress-propagation model over a homophily-based social graph. Built the simulation engine and UI for a 5-person team project.",
         github: "https://huggingface.co/spaces/amve/sc-digital-contagion-simulator",
         date: "2025",
         badges: ["Python", "K-Means"]
     },
     {
         title: "PACS 3D Viewer",
-        description: "Clinical-grade 3D renderer featuring GPU ray-casting.",
+        description: "Clinical-grade 3D DICOM renderer using GPU ray-casting; cut memory usage ~50% via Int16 voxel data.",
         github: "https://github.com/amitverma-cf/pacs",
         date: "2026",
         badges: ["WebGL", "GPU"]
@@ -25,31 +25,20 @@ const projects = [
 const experienceData = [
     {
         period: "May 2025 - Dec 2025",
-        role: "Founding Engineer",
+        role: "Co-Founder & CTO",
         company: "YUDI AI",
-        description: "Led the technical architecture for a startup building emotional AI avatars capable of writing, speaking, and interacting via live video.",
-        highlights: ["Built real-time AI communication using WebSockets.", "Reduced inference latency by ~40% on A100 GPUs.", "Designed fault-tolerant concurrent session handling."]
+        description: "Co-founded an early-stage AI startup building real-time conversational avatars. Startup wound down due to lack of funding; left after ~7 months.",
+        highlights: [
+            "Designed a serverless architecture using short-lived ephemeral tokens so the frontend could connect directly to Gemini's realtime audio API, avoiding a persistent VM-hosted backend.",
+            "Deployed MuseTalk on an A100 GPU (via startup GCP credits) to drive avatar video from streamed audio.",
+        ]
     },
     {
         period: "Jan 2025 - Mar 2025",
         role: "SWE Intern",
         company: "FacePe.net",
-        description: "Engineered the backend authorization flows for a device-free, biometric payment platform operating in the fintech sector.",
-        highlights: ["Developed Facial Recognition + PIN logic.", "Optimized GCP webhook pipelines.", "Maintained state consistency in distributed workflows."]
-    },
-    {
-        period: "Jan 2024 - Jan 2025",
-        role: "Software Engineer",
-        company: "Prithvi Quest",
-        description: "Directed software operations for a startup specializing in drone mapping and automated building cleaning hardware.",
-        highlights: ["Architected drone flight stability software.", "Developed telemetry tracking mobile app.", "Implemented hardware-ready CI/CD pipelines."]
-    },
-    {
-        period: "Apr 2020 - Oct 2020",
-        role: "App Developer",
-        company: "DAYBEST",
-        description: "Developed client-facing mobile applications for a startup modernizing the agricultural supply chain.",
-        highlights: ["Built Flutter marketplace meta-app.", "Integrated Firebase for real-time sync.", "Connected mobile frontends to WordPress CMS."]
+        description: "Backend work on a device-free, biometric (Face + PIN) payment platform.",
+        highlights: ["Built backend logic for the biometric authentication flow.", "Debugged webhook delivery failures in the transaction pipeline."]
     }
 ];
 
@@ -64,7 +53,7 @@ const projectItems = [
         image: 'https://static.vecteezy.com/system/resources/previews/011/411/224/non_2x/illustration-of-japanese-radish-vector.jpg',
         link: 'https://github.com/amitverma-cf/reddish',
         title: 'Reddish',
-        description: 'Concurrent multithreaded Redis-like server.'
+        description: 'Redis-like TCP server written in C++.'
     },
     {
         image: 'https://raw.githubusercontent.com/amitverma-cf/movie-rag/master/assets/dashboard.png',

@@ -113,32 +113,32 @@ export default function App() {
         />
       </div>
       
-      <section id="home" className="h-screen w-screen overflow-hidden"><Hero /></section>
+      <section id="home" className="h-dvh w-full overflow-hidden"><Hero /></section>
       
-      <section id="experiences" className="h-screen w-screen overflow-hidden">
+      <section id="experiences" className="h-dvh w-full overflow-hidden">
         <ParticleTypography text="Experiences" fontSize={200} particleDensity={5} dispersionStrength={20} />
       </section>
       
       {/* Horizontal pinned timeline */}
       <AboutTimeline />
       
-      <section id="projects-title" className="h-screen w-screen overflow-hidden">
+      <section id="projects-title" className="h-dvh w-full overflow-hidden">
         <ParticleTypography text="Projects" fontSize={200} particleDensity={5} dispersionStrength={20} />
       </section>
       
       {/* Scrollytelling Projects Section */}
-      <section id="projects" className="h-screen w-screen overflow-hidden flex items-center justify-center bg-black">
+      <section id="projects" className="h-dvh w-full overflow-hidden flex items-center justify-center bg-black">
         {/* The content-wrapper is crucial here. We animate THIS, not the section itself, to prevent layout breaks when pinned */}
         <div className="content-wrapper w-full h-full flex items-center justify-center will-change-transform">
           <InfiniteMenu items={projectItems} scale={1} />
         </div>
       </section>
       
-      <section id="contacts-title" className="h-screen w-screen overflow-hidden">
+      <section id="contacts-title" className="h-dvh w-full overflow-hidden">
         <ParticleTypography text="Contacts" fontSize={200} particleDensity={5} dispersionStrength={20} />
       </section>
       
-      <section id="contact" className="h-screen w-screen overflow-hidden items-center pt-30">
+      <section id="contact" className="h-dvh w-full overflow-hidden items-center pt-30">
         <Contact />
         <ParticleTypography text="AMIT VERMA" fontSize={400} particleDensity={5} dispersionStrength={20} />
       </section>
