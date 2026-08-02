@@ -30,7 +30,6 @@ const experienceData = [
         description: "Co-founded an early-stage AI startup building real-time conversational avatars. Startup wound down due to lack of funding; left after ~7 months.",
         highlights: [
             "Designed a serverless architecture using short-lived ephemeral tokens so the frontend could connect directly to Gemini's realtime audio API, avoiding a persistent VM-hosted backend.",
-            "Deployed MuseTalk on an A100 GPU (via startup GCP credits) to drive avatar video from streamed audio.",
         ]
     },
     {
