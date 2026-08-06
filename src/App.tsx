@@ -96,7 +96,7 @@ export default function App() {
         className: "bg-blue-700 text-white",
         icon: <HugeiconsIcon size={18} icon={PrescriptionsIcon} />,
         label: "Resume",
-        onClick: () => window.open("https://drive.google.com/file/d/1omRxKGLa8US07Z0banTRC_bKuNJvQimy/view?usp=sharing", "_blank"),
+        onClick: () => window.open("https://drive.google.com/file/d/1VjJBqLm8ylKz9kECXxKB6dd8RaZnLQZv/view?usp=sharing", "_blank"),
       },
     ],
     [scrollToSection]
