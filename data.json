@@ -1,0 +1,132 @@
+{
+  "profile": {
+    "name": "Amit Verma",
+    "role": "Backend & Systems Engineer",
+    "email": "amit@qozu.fyi",
+    "domain": "amve.tech",
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/amitverma-cf" },
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/amve-me" },
+      { "label": "Hugging Face", "url": "https://huggingface.co/amve" },
+      { "label": "X", "url": "http://x.com/amve_me" },
+      { "label": "qozu.fyi", "url": "https://qozu.fyi" },
+      { "label": "Email", "url": "mailto:amit@qozu.fyi" }
+    ]
+  },
+  "projects": [
+    {
+      "title": "reddish",
+      "url": "https://github.com/amitverma-cf/reddish",
+      "tech": ["C++23", "CMake", "Redis", "Networking"],
+      "image": "/placeholder.svg"
+    },
+    {
+      "title": "agent.cpp",
+      "url": "https://github.com/amitverma-cf/agent.cpp",
+      "tech": ["C++", "C", "CMake", "Edge AI"],
+      "image": "/placeholder.svg"
+    },
+    {
+      "title": "pacs",
+      "url": "https://github.com/amitverma-cf/pacs",
+      "tech": ["TypeScript", "Cornerstone3D", "WebGL", "DICOM"],
+      "image": "/placeholder.svg"
+    },
+    {
+      "title": "vector-agent",
+      "url": "https://github.com/amitverma-cf/vector-agent",
+      "tech": ["Python", "OpenAI API", "Pydantic", "Skia"],
+      "image": "https://raw.githubusercontent.com/amitverma-cf/vector-agent/main/examples/rocket.svg"
+    },
+    {
+      "title": "movie-rag",
+      "url": "https://github.com/amitverma-cf/movie-rag",
+      "tech": ["Python", "FAISS", "SQLite", "Streamlit"],
+      "image": "https://raw.githubusercontent.com/amitverma-cf/movie-rag/master/assets/dashboard.png"
+    },
+    {
+      "title": "syl",
+      "url": "https://github.com/amitverma-cf/syl",
+      "tech": ["Rust", "Tauri", "ONNX", "Local AI"],
+      "image": "/placeholder.svg"
+    },
+    {
+      "title": "nexathon",
+      "url": "https://github.com/amitverma-cf/nexathon",
+      "tech": ["TypeScript", "Algorand", "Risk Intelligence"],
+      "image": "https://raw.githubusercontent.com/amitverma-cf/nexathon/main/assets/cover.png"
+    },
+    {
+      "title": "mok-gpui",
+      "url": "https://github.com/amitverma-cf/mok-gpui",
+      "tech": ["Rust", "GPUI"],
+      "image": "https://raw.githubusercontent.com/amitverma-cf/mok-gpui/main/frontend/public/og.png"
+    },
+    {
+      "title": "sc-digital-contagion-simulator",
+      "url": "https://github.com/amitverma-cf/sc-digital-contagion-simulator",
+      "tech": ["Python", "NetworkX", "NumPy"],
+      "image": "/placeholder.svg"
+    },
+    {
+      "title": "supermind_hackathon",
+      "url": "https://github.com/amitverma-cf/supermind_hackathon",
+      "tech": ["TypeScript", "Next.js", "Astra DB", "Langflow"],
+      "image": "https://raw.githubusercontent.com/amitverma-cf/supermind_hackathon/main/public/kaizen-UI.jpg"
+    },
+    {
+      "title": "exe2cpp",
+      "url": "https://github.com/amitverma-cf/exe2cpp",
+      "tech": ["C++", "Reverse Engineering"],
+      "image": "/placeholder.svg"
+    },
+    {
+      "title": "unihub",
+      "url": "https://github.com/amitverma-cf/unihub",
+      "tech": ["TypeScript", "React", "Node.js"],
+      "image": "/placeholder.svg"
+    },
+    {
+      "title": "acm_mu",
+      "url": "https://github.com/amitverma-cf/acm_mu",
+      "tech": ["TypeScript", "Next.js"],
+      "image": "/placeholder.svg"
+    },
+    {
+      "title": "flutter_instagram_redesign",
+      "url": "https://github.com/amitverma-cf/flutter_instagram_redesign",
+      "tech": ["Dart", "Flutter"],
+      "image": "https://raw.githubusercontent.com/amitverma-cf/flutter_instagram_redesign/stable/assets/app_ss/120241234-335008197936766-667811.gif"
+    },
+    {
+      "title": "BudgetTracker",
+      "url": "https://github.com/amitverma-cf/BudgetTracker",
+      "tech": ["Dart", "Flutter"],
+      "image": "https://raw.githubusercontent.com/amitverma-cf/BudgetTracker/master/screenshot/1.png"
+    },
+    {
+      "title": "stroll-intrview-task",
+      "url": "https://github.com/amitverma-cf/stroll-intrview-task",
+      "tech": ["Dart", "Flutter"],
+      "image": "/placeholder.svg"
+    }
+  ],
+  "technicalSkills": [
+    {
+      "category": "Languages",
+      "items": "C++, C, Rust, Python, TypeScript, JavaScript, SQL, HTML, CSS, Dart"
+    },
+    {
+      "category": "Frameworks & Libraries",
+      "items": "React, Next.js, Node.js, Express.js, WebGL, GLSL, Cornerstone3D, Skia, Tauri, FAISS, Pydantic, Streamlit, NumPy, NetworkX"
+    },
+    {
+      "category": "Databases & Storage",
+      "items": "Redis, SQLite, PostgreSQL, Firebase"
+    },
+    {
+      "category": "Tools & Platforms",
+      "items": "Linux, Git, GitHub Actions, CMake, Valgrind, memtier_benchmark, Docker, uv, bun, pnpm, OpenAI API, Gemini Live API"
+    }
+  ]
+}

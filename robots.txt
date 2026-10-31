@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Agent & LLM readable portfolio endpoints
+# https://amve.tech/data.json
+# https://amve.tech/llms.txt

@@ -1,0 +1,21 @@
+# Amit Verma — Portfolio & Machine Data
+
+> Backend & Systems Engineer specialized in low-level TCP sockets, C++ in-memory caching, WebGL GPU rendering, and agentic systems.
+
+## Primary Endpoints
+- [JSON Data](https://amve.tech/data.json): Structured machine-readable profile, education, featured projects, and technical skills.
+- [Website](https://amve.tech): Minimal, static zero-JS portfolio.
+
+## Core Projects
+- [Reddish](https://github.com/amitverma-cf/reddish): Single-threaded, non-blocking RESP/TCP in-memory database in C++23.
+- [agent.cpp](https://github.com/amitverma-cf/agent.cpp): Ultra-low latency C/C++ AI agent library for edge devices.
+- [pacs](https://github.com/amitverma-cf/pacs): Clinical-grade 3D DICOM volume renderer using WebGL and GPU ray-casting.
+- [vector-agent](https://github.com/amitverma-cf/vector-agent): Multi-agent SVG generation system in Python with VLM critique loop.
+- [movie-rag](https://github.com/amitverma-cf/movie-rag): Conversational movie search over ~12k TMDB films combining FAISS and SQL tool-calling.
+
+## Profiles & Contact
+- Email: amit@qozu.fyi
+- GitHub: https://github.com/amitverma-cf
+- LinkedIn: https://www.linkedin.com/in/amve-me
+- Hugging Face: https://huggingface.co/amve
+- X / Twitter: http://x.com/amve_me

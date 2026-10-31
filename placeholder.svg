@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#15151a" />
+      <stop offset="100%" stop-color="#0d0d10" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#2a2a35" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#0d0d10" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="dotgrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.8" fill="#2e2e38" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="640" height="360" fill="url(#bg)" />
+  <rect width="640" height="360" fill="url(#glow)" />
+  <rect width="640" height="360" fill="url(#dotgrid)" />
+
+  <!-- Outer frame border -->
+  <rect x="0.5" y="0.5" width="639" height="359" fill="none" stroke="#25252e" stroke-width="1" />
+
+  <!-- Minimal Terminal Window -->
+  <g transform="translate(160, 95)">
+    <rect width="320" height="170" rx="6" fill="#111115" stroke="#272732" stroke-width="1" />
+    
+    <!-- Title bar dots -->
+    <circle cx="20" cy="18" r="3.5" fill="#383844" />
+    <circle cx="33" cy="18" r="3.5" fill="#383844" />
+    <circle cx="46" cy="18" r="3.5" fill="#383844" />
+    <line x1="0" y1="34" x2="320" y2="34" stroke="#1f1f28" stroke-width="1" />
+
+    <!-- Code glyph & terminal prompt -->
+    <text x="30" y="78" fill="#717182" font-family="ui-monospace, monospace" font-size="13" font-weight="500">$ git log --oneline</text>
+    <text x="30" y="104" fill="#a1a1b0" font-family="ui-monospace, monospace" font-size="13" font-weight="600">&gt; src/main.rs</text>
+    <rect x="145" y="93" width="7" height="13" fill="#6366f1" opacity="0.85" />
+    <text x="30" y="132" fill="#525260" font-family="ui-monospace, monospace" font-size="12">compiled in 14ms</text>
+  </g>
+</svg>
